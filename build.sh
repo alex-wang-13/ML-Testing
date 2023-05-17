@@ -1,6 +1,11 @@
 #!/usr/bin/sh
 
+FILE=main
+
 set -xe
 
-clang -Wall -Wextra -o main main.c
-
+if [ -z "$1" ] ; then
+  clang -Wall -Wextra -o $FILE $FILE.c
+else
+  rm -f $FILE
+fi
